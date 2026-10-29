@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_app_item"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingStart="8dp"
+    android:paddingTop="14dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="14dp">
+
+    <!-- App Icon -->
+    <ImageView
+        android:id="@+id/iv_app_icon"
+        android:layout_width="@dimen/app_item_icon_size"
+        android:layout_height="@dimen/app_item_icon_size"
+        android:elevation="3dp"
+        android:scaleType="fitCenter" />
+
+    <!-- App Name Label -->
+    <TextView
+        android:id="@+id/tv_app_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textColor="@color/car_text_primary"
+        android:textSize="13sp"
+        android:textStyle="normal" />
+
+</LinearLayout>

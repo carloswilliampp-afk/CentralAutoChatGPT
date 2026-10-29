@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dock_height"
+    android:background="@drawable/bg_card_dock"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <!-- App Drawer Toggle Button (Android Auto 9-dot icon) -->
+    <FrameLayout
+        android:id="@+id/btn_toggle_apps"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_button_round"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/iv_launcher_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_dashboard_apps"
+            app:tint="@color/car_text_primary" />
+    </FrameLayout>
+
+    <!-- Space separator -->
+    <View
+        android:layout_width="16dp"
+        android:layout_height="match_parent" />
+
+    <!-- Center Active App Shortcuts (Map & Spotify) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical|start"
+        android:orientation="horizontal">
+
+        <!-- Map Shortcut Pill -->
+        <FrameLayout
+            android:id="@+id/btn_dock_map"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_button_round"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_map"
+                app:tint="@color/car_text_primary" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="match_parent" />
+
+        <!-- Spotify Shortcut Pill -->
+        <FrameLayout
+            android:id="@+id/btn_dock_spotify"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_button_round"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_spotify" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="match_parent" />
+
+        <!-- Car Settings Shortcut Pill -->
+        <FrameLayout
+            android:id="@+id/btn_dock_settings"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_button_round"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/car_text_secondary" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Right Side: Google Assistant, Connectivity & Clock -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal">
+
+        <!-- Google Assistant / Voice Search Button -->
+        <FrameLayout
+            android:id="@+id/btn_assistant"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_button_round"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_assistant" />
+        </FrameLayout>
+
+        <!-- Volume / Audio Quick Button -->
+        <FrameLayout
+            android:id="@+id/btn_volume"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_button_round"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_volume"
+                app:tint="@color/car_text_secondary" />
+        </FrameLayout>
+
+        <!-- Wi-Fi Status Icon -->
+        <ImageView
+            android:id="@+id/iv_wifi_status"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_wifi"
+            app:tint="@color/car_text_secondary" />
+
+        <!-- Android Auto Digital Clock -->
+        <TextView
+            android:id="@+id/tv_dock_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/car_text_primary"
+            android:textSize="@dimen/text_size_clock"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

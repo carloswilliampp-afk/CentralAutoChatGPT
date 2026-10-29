@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Automotive Fullscreen Dark Theme -->
+    <style name="Theme.AutoCarLauncher" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/car_accent_blue</item>
+        <item name="colorSecondary">@color/spotify_green</item>
+        <item name="android:statusBarColor">@color/car_bg_deep</item>
+        <item name="android:navigationBarColor">@color/car_dock_bg</item>
+        <item name="android:windowBackground">@color/car_bg_deep</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AutoCarLauncher.Fullscreen" parent="Theme.AutoCarLauncher">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+</resources>

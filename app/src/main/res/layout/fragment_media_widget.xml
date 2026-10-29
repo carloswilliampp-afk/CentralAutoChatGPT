@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Active Media Player Content -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_media_active"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!-- Album Art Card with rounded corners -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_album_art"
+            android:layout_width="@dimen/media_cover_size"
+            android:layout_height="@dimen/media_cover_size"
+            app:cardCornerRadius="@dimen/media_cover_corner"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/car_card_hover"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_album_art"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_music"
+                app:tint="@color/car_text_dim" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Right Side: Details & Playback Controls -->
+        <LinearLayout
+            android:id="@+id/media_info_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/card_album_art"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Top Row: Source badge (Spotify) & App Source -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_media_source_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_spotify" />
+
+                <TextView
+                    android:id="@+id/tv_media_source_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/spotify_source"
+                    android:textColor="@color/spotify_green"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Track Title -->
+            <TextView
+                android:id="@+id/tv_track_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="Música no Spotify"
+                android:textColor="@color/car_text_primary"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold" />
+
+            <!-- Artist / Album Name -->
+            <TextView
+                android:id="@+id/tv_artist_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Artista do Álbum"
+                android:textColor="@color/car_text_secondary"
+                android:textSize="@dimen/text_size_subtitle" />
+
+            <!-- Track Progress Bar -->
+            <ProgressBar
+                android:id="@+id/pb_track_progress"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="35"
+                android:progressTint="@color/spotify_green" />
+
+            <!-- Playback Controls (Prev, Play/Pause, Next) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Previous Track Button -->
+                <FrameLayout
+                    android:id="@+id/btn_media_prev"
+                    android:layout_width="@dimen/media_button_size"
+                    android:layout_height="@dimen/media_button_size"
+                    android:background="@drawable/bg_button_round"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="@dimen/media_button_icon_size"
+                        android:layout_height="@dimen/media_button_icon_size"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_skip_prev"
+                        app:tint="@color/car_text_primary" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="match_parent" />
+
+                <!-- Play / Pause Button -->
+                <FrameLayout
+                    android:id="@+id/btn_media_play_pause"
+                    android:layout_width="@dimen/media_button_size"
+                    android:layout_height="@dimen/media_button_size"
+                    android:background="@drawable/bg_button_round"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iv_play_pause_icon"
+                        android:layout_width="@dimen/media_button_icon_size"
+                        android:layout_height="@dimen/media_button_icon_size"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_play"
+                        app:tint="@color/car_text_primary" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="match_parent" />
+
+                <!-- Next Track Button -->
+                <FrameLayout
+                    android:id="@+id/btn_media_next"
+                    android:layout_width="@dimen/media_button_size"
+                    android:layout_height="@dimen/media_button_size"
+                    android:background="@drawable/bg_button_round"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="@dimen/media_button_icon_size"
+                        android:layout_height="@dimen/media_button_icon_size"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_skip_next"
+                        app:tint="@color/car_text_primary" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Empty State: Prompt to open Spotify -->
+    <LinearLayout
+        android:id="@+id/layout_media_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_spotify" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_media_playing"
+            android:textColor="@color/car_text_primary"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/tap_to_open_spotify"
+            android:textColor="@color/car_text_secondary"
+            android:textSize="@dimen/text_size_subtitle" />
+
+        <Button
+            android:id="@+id/btn_open_spotify_fallback"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/spotify_green"
+            android:text="@string/open_spotify"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</FrameLayout>

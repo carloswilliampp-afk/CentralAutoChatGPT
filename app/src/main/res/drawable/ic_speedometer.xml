@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@color/car_speed_accent"
+        android:pathData="M12,4C6.48,4 2,8.48 2,14c0,2.42 0.86,4.64 2.29,6.38l1.42,-1.42C4.61,17.47 4,15.81 4,14c0,-4.41 3.59,-8 8,-8s8,3.59 8,8c0,1.81 -0.61,3.47 -1.71,4.96l1.42,1.42C21.14,18.64 22,16.42 22,14c0,-5.52 -4.48,-10 -10,-10z M12.71,11.29l-3.42,3.42 1.42,1.42 3.42,-3.42z" />
+</vector>

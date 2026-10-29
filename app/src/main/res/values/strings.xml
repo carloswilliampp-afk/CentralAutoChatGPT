@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Android Auto Central</string>
+    <string name="media_service_label">Serviço de Controle de Mídia Automotivo</string>
+    
+    <!-- Dashboard Titles & Placeholders -->
+    <string name="search_destination_hint">Para onde vamos?</string>
+    <string name="no_media_playing">Nenhuma mídia reproduzindo</string>
+    <string name="tap_to_open_spotify">Toque para abrir o Spotify</string>
+    <string name="open_spotify">Abrir Spotify</string>
+    <string name="spotify_source">Spotify</string>
+    <string name="media_source_unknown">Mídia do Carro</string>
+    <string name="unknown_artist">Artista desconhecido</string>
+    <string name="unknown_title">Mídia pausada</string>
+    
+    <!-- Actions -->
+    <string name="open_google_maps">Google Maps</string>
+    <string name="open_waze">Waze</string>
+    <string name="center_location">Centralizar GPS</string>
+    <string name="search_voice">Pesquisa por Voz</string>
+    
+    <!-- Speedometer & Status -->
+    <string name="km_h">km/h</string>
+    <string name="speed_zero">0</string>
+    <string name="searching_gps">Buscando sinal GPS…</string>
+    
+    <!-- App Drawer -->
+    <string name="app_drawer_title">Aplicativos da Central</string>
+    <string name="search_apps_hint">Buscar aplicativos instalados…</string>
+    <string name="no_apps_found">Nenhum aplicativo encontrado</string>
+    <string name="back_to_dashboard">Voltar ao Início</string>
+    
+    <!-- Permissions & Setup -->
+    <string name="permission_notification_title">Permissão de Notificação</string>
+    <string name="permission_notification_desc">Permita que a Central acesse o Spotify e mídias em reprodução.</string>
+    <string name="permission_location_desc">O acesso ao GPS é necessário para mostrar o mapa e velocímetro.</string>
+</resources>
